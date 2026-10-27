@@ -1133,7 +1133,7 @@ additionalPrometheusRulesMap:
             expr: max by (namespace, job) ({__name__=~"cnpg_collector_last_available_backup_timestamp|barman_cloud_cloudnative_pg_io_last_available_backup_timestamp"}) == 0
             for: 1d
             labels:
-              severity: warning
+              severity: critical_tomorrow
             annotations:
               summary: 'CNPG cluster {{ "{{" }} $labels.job }} has no backup'
               description: 'CNPG cluster {{ "{{" }} $labels.job }} never had a successful backup (backup not configured?).'
